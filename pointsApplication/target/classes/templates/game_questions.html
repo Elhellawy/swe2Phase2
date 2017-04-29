@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="windows-1256"></meta>
+<title>Insert title here</title>
+ <link th:href="@{/css/header.css}" rel="stylesheet" media="screen" />
+ 
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+
+<!-- Optional theme -->
+<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css}" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
+
+<!-- Latest compiled and minified JavaScript -->
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
+</head>
+<body>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="/addstudent">Student Signup</a></li>
+  <li><a href="/check_student">Student Login</a></li>
+  <li><a href="/addteacher">Teacher Signup</a></li>
+  <li><a href="/check_teacher">Teacher Login</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Game Questions ??</h1> 
+  </div>
+ 
+
+<form th:action="@{/anotherquestion}"  method="post">
+<div class="form-group">
+<label for="Question">Question
+<input type="text" name="question" class="form-control" />
+</label>
+</div>
+<div class="form-group">
+<label for="Answer">Answer (1):
+<input type="text" name="answer1" class="form-control"/>
+</label>
+</div>
+<div class="form-group">
+<label for="Answer">Answer (2):
+<input type="text" name="answer2" class="form-control"/>
+</label>
+</div>
+<div class="form-group">
+<label for="Answer">Answer (3):
+<input type="text" name="answer3" class="form-control"/>
+</label>
+</div>
+<div class="form-group">
+<label for="Answer">The Correct Answer:
+<input type="text" name="correct"  class="form-control"/>
+</label>
+</div>
+<input type="submit" value="Add Another Question"  class="btn btn-success"/>   
+</form>
+<form th:action="@{/create_game}"  method="get">
+
+<input type="submit" value="End Game and Save Questions "  class="btn btn-danger" />   
+</form>
+  </div>
+</body>
+</html>

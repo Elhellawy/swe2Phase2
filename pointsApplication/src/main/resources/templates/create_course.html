@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="windows-1256"></meta>
+<title>Create Course</title>
+<link th:href="@{/css/header.css}" rel="stylesheet" media="screen" />
+<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+
+<!-- Optional theme -->
+<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css}" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
+
+<!-- Latest compiled and minified JavaScript -->
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
+</head>
+<body>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="/courses">Courses</a></li>
+  <li><a href="/create_game">Games</a></li>
+</ul>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Create Course</h1>
+    <p>Enter Course Name And Course Code</p> 
+  </div>
+ 
+<form th:action="@{/create_course}" th:object="${course}" method="post">
+<div class="form-group">
+<label for="course name" >course Name
+<input type="text" th:field="*{coursename}" class="form-control"  placeholder="Enter Course Name"/>
+</label>
+</div>
+<br/><br/>
+<div class="form-group">
+<label for="course name" >course Code
+<input type="text" th:field="*{coursecode}" class="form-control" placeholder="Enter Course Code"/>
+</label>
+</div>
+
+<input type="submit" value="Create Course" class="btn btn-success"/>
+</form>
+
+ </div>
+</body>
+</html>
